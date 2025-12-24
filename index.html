@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Merry Christmas! 🎄</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 雪花效果 -->
+        <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+            <div class="snowflake">❅</div>
+            <div class="snowflake">❆</div>
+        </div>
+
+        <!-- 欢迎页面 -->
+        <div id="welcomePage" class="page active">
+            <!-- 圣诞树 -->
+            <div class="christmas-tree">
+                <div class="tree-top">⭐</div>
+                <div class="tree-layer layer-1">🎄</div>
+                <div class="tree-layer layer-2">🎄</div>
+                <div class="tree-layer layer-3">🎄</div>
+                <div class="tree-trunk">▮</div>
+            </div>
+
+            <!-- 装饰球 -->
+            <div class="ornaments">
+                <div class="ornament" style="--delay: 0s">🔴</div>
+                <div class="ornament" style="--delay: 0.5s">🟡</div>
+                <div class="ornament" style="--delay: 1s">🔵</div>
+                <div class="ornament" style="--delay: 1.5s">⚪</div>
+                <div class="ornament" style="--delay: 2s">🟢</div>
+            </div>
+
+            <!-- 礼物堆（装饰用） -->
+            <div class="gifts-pile">
+                <div class="deco-gift">🎁</div>
+                <div class="deco-gift">🎁</div>
+                <div class="deco-gift">🎁</div>
+                <div class="deco-gift">🎁</div>
+                <div class="deco-gift">🎁</div>
+                <div class="deco-gift">🎁</div>
+            </div>
+
+            <!-- Greeting Message -->
+            <div class="greeting-box">
+                <h1 class="greeting-title">🎅 Merry Christmas, bb! 🎅</h1>
+                <p class="greeting-text">
+                    Hi bb,<br>
+                    I didn't forget you.<br>
+                    I've prepared 4 special gifts for you! ✨<br>
+                    You have two choices: you can see what gifts you got today, or you can wait and open them together with me when we meet again.
+                </p>
+                <div class="choice-buttons">
+                    <button class="btn btn-open" id="openNowBtn">
+                        🎁 Open Now
+                    </button>
+                    <button class="btn btn-later" id="openLaterBtn">
+                        ⏰ Save Surprise
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gifts Page -->
+        <div id="giftsPage" class="page">
+            <h2 class="gifts-title">Tap the gift boxes to open your surprises! 🎁</h2>
+            
+            <div class="gifts-container two-columns">
+                <!-- Gift 1 -->
+                <div class="gift-box" data-gift-id="1">
+                    <div class="gift-closed">
+                        <div class="gift-wrap">
+                            <img src="assets/gift1.png" alt="Gift 1 Box" class="giftbox-image">
+                        </div>
+                        <p class="gift-number">Gift #1</p>
+                    </div>
+                    <div class="gift-opened">
+                        <div class="gift-content">
+                            <img src="assets/product1.png" alt="Gift 1" class="gift-image product-image large-gift-image">
+                            <h3 class="gift-name">Underwear</h3>
+                            <p class="gift-description">
+                                I bought you new underwear and hope you find them comfortable.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gift 2 -->
+                <div class="gift-box" data-gift-id="2">
+                    <div class="gift-closed">
+                        <div class="gift-wrap">
+                            <img src="assets/gift2.png" alt="Gift 2 Box" class="giftbox-image">
+                        </div>
+                        <p class="gift-number">Gift #2</p>
+                    </div>
+                    <div class="gift-opened">
+                        <div class="gift-content">
+                            <img src="assets/product2.png" alt="Gift 2" class="gift-image product-image large-gift-image">
+                            <h3 class="gift-name">Car Aroma Diffuser</h3>
+                            <p class="gift-description">
+                                I hope every day you drive to work, your car smells nice and your mood is joyful.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gift 3 -->
+                <div class="gift-box" data-gift-id="3">
+                    <div class="gift-closed">
+                        <div class="gift-wrap">
+                            <img src="assets/gift3.png" alt="Gift 3 Box" class="giftbox-image">
+                        </div>
+                        <p class="gift-number">Gift #3</p>
+                    </div>
+                    <div class="gift-opened">
+                        <div class="gift-content">
+                            <img src="assets/product3.png" alt="Gift 3" class="gift-image product-image large-gift-image">
+                            <h3 class="gift-name">Planet Lamp</h3>
+                            <p class="gift-description">
+                                You love the universe, so I got you a planet of your own.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gift 4 -->
+                <div class="gift-box" data-gift-id="4">
+                    <div class="gift-closed">
+                        <div class="gift-wrap">
+                            <img src="assets/gift4.png" alt="Gift 4 Box" class="giftbox-image">
+                        </div>
+                        <p class="gift-number">Gift #4</p>
+                    </div>
+                    <div class="gift-opened">
+                        <div class="gift-content">
+                            <img src="assets/product4.png" alt="Gift 4" class="gift-image product-image large-gift-image">
+                            <h3 class="gift-name">Candle</h3>
+                            <p class="gift-description">
+                                When I saw this candle, I thought of you. I want to light it and watch a movie with you on the sofa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-back" id="backBtn">Back to Home</button>
+            <button class="btn btn-complete" id="toCompleteBtn" style="display:none;">🎉 See All Gifts</button>
+        </div>
+
+        <!-- Surprise Page -->
+        <div id="surprisePage" class="page">
+            <div class="surprise-box">
+                <h2 class="surprise-title">✨ Alright, let's save the surprise! ✨</h2>
+                <div class="countdown-box">
+                    <p class="countdown-text">Days until you receive your gifts:</p>
+                    <div class="countdown">
+                        <span class="countdown-number">13</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                </div>
+                <p class="surprise-message">
+                    Can't wait to see you! ❤️<br>
+                    We'll open these gifts together then! 🎁
+                </p>
+                <button class="btn btn-back" id="backFromSurpriseBtn">Back to Home</button>
+            </div>
+        </div>
+
+        <!-- Complete Page -->
+        <div id="completePage" class="page">
+            <div class="complete-box">
+                <h2 class="complete-title">🎉 All Gifts Opened! 🎉</h2>
+                <p class="complete-message">
+                    Hope you love these gifts! ❤️<br>
+                    Wishing you a warm and happy Christmas! 🎄
+                </p>
+                <div class="all-gifts-display">
+                    <div class="mini-gift">
+                        <img src="assets/product1.png" alt="Gift 1" class="mini-gift-image">
+                        <div class="mini-gift-name">Underwear</div>
+                    </div>
+                    <div class="mini-gift">
+                        <img src="assets/product2.png" alt="Gift 2" class="mini-gift-image">
+                        <div class="mini-gift-name">Car Aroma Diffuser</div>
+                    </div>
+                    <div class="mini-gift">
+                        <img src="assets/product3.png" alt="Gift 3" class="mini-gift-image">
+                        <div class="mini-gift-name">Planet Lamp</div>
+                    </div>
+                    <div class="mini-gift">
+                        <img src="assets/product4.png" alt="Gift 4" class="mini-gift-image">
+                        <div class="mini-gift-name">Candle</div>
+                    </div>
+                </div>
+                <button class="btn btn-back" id="backFromCompleteBtn">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
