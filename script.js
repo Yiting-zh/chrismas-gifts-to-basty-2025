@@ -55,21 +55,13 @@ function handleGiftClick(event) {
 function openGift(giftBox, giftId) {
     // 添加打开状态
     giftBox.classList.add('opened');
+    // 清除所有内联 transform 样式，确保卡片回正
+    giftBox.style.transform = '';
     state.openedGifts.add(giftId);
-    
+
     // 检查是否所有礼物都已打开
     if (state.openedGifts.size === giftBoxes.length) {
         state.allGiftsOpened = true;
-        // 延迟显示完成页面
-        setTimeout(() => {
-            showPage('complete');
-        }, 2000);
-    }
-}
-
-function checkAllGiftsOpened() {
-    if (allGiftsOpened) {
-        // 不自动跳转
         document.getElementById('toCompleteBtn').style.display = 'block';
     }
 }
@@ -111,14 +103,14 @@ buttons.backFromComplete.addEventListener('click', () => {
     showPage('welcome');
 });
 
+// "See All Gifts" 按钮点击跳转到 complete 页面
+document.getElementById('toCompleteBtn').addEventListener('click', function() {
+    showPage('complete');
+});
+
 // 为每个礼物盒添加点击事件
 giftBoxes.forEach(box => {
     box.addEventListener('click', handleGiftClick);
-});
-
-// 在 complete 页的按钮点击事件中跳转
-document.getElementById('toCompleteBtn').addEventListener('click', function() {
-    showPage('completePage');
 });
 
 // ===== 键盘快捷键 =====
@@ -159,14 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
 giftBoxes.forEach(box => {
     box.addEventListener('mouseenter', () => {
         if (!box.classList.contains('opened')) {
-            box.style.transform = 'translateY(-10px) scale(1.05) rotate(2deg)';
+            box.style.transform = 'translateY(-8px) scale(1.02)';
         }
     });
     
     box.addEventListener('mouseleave', () => {
-        if (!box.classList.contains('opened')) {
-            box.style.transform = '';
-        }
+        // 清除内联样式，让 CSS 控制
+        box.style.transform = '';
     });
 });
 
