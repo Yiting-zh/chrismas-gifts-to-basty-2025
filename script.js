@@ -69,7 +69,7 @@ function openGift(giftBox, giftId) {
 
 function checkAllGiftsOpened() {
     if (allGiftsOpened) {
-        // 只显示按钮，不自动跳转
+        // 不自动跳转
         document.getElementById('toCompleteBtn').style.display = 'block';
     }
 }
