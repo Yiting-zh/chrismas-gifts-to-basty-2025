@@ -203,8 +203,9 @@ body::before {
 /* 礼物堆 */
 .gifts-pile {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
     gap: 15px;
     margin-bottom: 30px;
     animation: giftsAppear 1s ease-out 0.5s both;
@@ -409,8 +410,8 @@ body::before {
 }
 
 .giftbox-image {
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
@@ -419,15 +420,15 @@ body::before {
 
 @media (max-width: 768px) {
     .giftbox-image {
-        width: 90px;
-        height: 90px;
+        width: 140px;
+        height: 140px;
     }
 }
 
 @media (max-width: 480px) {
     .giftbox-image {
-        width: 70px;
-        height: 70px;
+        width: 120px;
+        height: 120px;
     }
 }
 
